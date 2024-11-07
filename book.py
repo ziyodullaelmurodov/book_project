@@ -13,12 +13,14 @@ class Book:
     def set_price(self, new_price):
         self.__price = new_price
 
+    def apply_discount(self, discount_percentage):
+        self.__price = discount_percentage
+
 # Create an instance of the Book class
 book = Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Fantasy", 1997, 10.99, True)
 # Get the price of the book
 price = book.get_price()
 print(price)
-# Set the price of the book
-book.set_price(9.99)
+book.apply_discount(price-(price * 0.10))
 price = book.get_price()
 print(price)
